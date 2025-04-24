@@ -12,8 +12,14 @@ export default function ThemeToggle () {
 
 
     React.useEffect(() => {
-        document.body.classList.toggle("lightMode")
-        document.body.classList.toggle(`darkMode`)
+        if(darkMode){
+            document.body.classList.add("darkMode")
+            document.body.classList.remove("lightMode")
+        }
+        else{
+            document.body.classList.add("lightMode")
+            document.body.classList.remove("darkMode")
+        }
     },[darkMode])
 
     return(
